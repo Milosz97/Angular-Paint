@@ -1,0 +1,64 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="canvas-size-modal">Choose New Canvas Size</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="canvasSizeForm" class="form">
+            <div class="form-group">
+                <label for="canvasWidth">Width</label>
+                <div class="input-group">
+                    <input id="canvasWidth" type="number" class="form-control" placeholder="New Canvas Width"
+                        name="canvasWidth" formControlName="width" required="required">
+                </div>
+                <div class="form__text-error">
+                    <div
+                        *ngIf="canvasSizeForm.get('width').errors?.required && (canvasSizeForm.get('width').touched || canvasSizeForm.get('width').dirty)">
+                        Width is required.
+                    </div>
+                    <div
+                        *ngIf="canvasSizeForm.get('width').errors?.min && (canvasSizeForm.get('width').touched || canvasSizeForm.get('width').dirty)">
+                        Width must be more than 1.
+                    </div>
+                    <div
+                        *ngIf="canvasSizeForm.get('width').errors?.max && (canvasSizeForm.get('width').touched || canvasSizeForm.get('width').dirty)">
+                        Width must be less than 4000.
+                    </div>
+                </div>
+
+                <label for="canvasHeight">Height</label>
+                <div class="input-group">
+                    <input id="canvasHeight" type="number" class="form-control" placeholder="New Canvas Height"
+                        name="canvasHeight" formControlName="height" required="required">
+                </div>
+                <div class="form__text-error">
+                    <div
+                        *ngIf="canvasSizeForm.get('height').errors?.required && (canvasSizeForm.get('height').touched || canvasSizeForm.get('height').dirty)">
+                        Height is required.
+                    </div>
+                    <div
+                        *ngIf="canvasSizeForm.get('height').errors?.min && (canvasSizeForm.get('height').touched || canvasSizeForm.get('height').dirty)">
+                        Height must be more than 1.
+                    </div>
+                    <div
+                        *ngIf="canvasSizeForm.get('height').errors?.max && (canvasSizeForm.get('height').touched || canvasSizeForm.get('height').dirty)">
+                        Height must be less than 4000.
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="modal.close()"
+                        [disabled]="canvasSizeForm.invalid">Change</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+
+</ng-template>
+
+<button id="Import" class="tool btn btn-outline-dark toolbar_tool_button" (click)="open(content)">Canvas Size</button>

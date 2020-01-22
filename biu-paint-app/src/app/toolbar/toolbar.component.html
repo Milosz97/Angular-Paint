@@ -1,0 +1,30 @@
+<div class="row toolbar ">
+    <div *ngFor="let tool of tools" class="col toolbar_tool">
+        <button #toolsButtons id="{{ tool }}" class="tool btn btn-outline-dark toolbar_tool_button">{{ tool }}</button>
+    </div>
+    <div class="col toolbar_tool">
+        <app-text-tool-modal></app-text-tool-modal>
+    </div>
+    <div class="col toolbar_tool">
+        <input type="color" class="form-control toolbar_tool_button toolbar_tool_color" #toolColor
+            (change)="changeToolColor()" />
+    </div>
+    <div class="col toolbar_tool">
+        <div>
+            <label for="toolSize">Tool Size: </label>
+            <input type="number" class="form-control " (change)="changeToolSize()" #toolSize
+                value="{{ defaultToolSize }}" min="1">
+        </div>
+    </div>
+    <div class="col toolbar_tool">
+        <app-canvas-size-modal></app-canvas-size-modal>
+    </div>
+
+    <div class="col toolbar_tool">
+        <app-import-file-modal></app-import-file-modal>
+    </div>
+    <div class="col toolbar_tool">
+        <button class="btn btn-outline-dark toolbar_tool_button " [routerLink]="['/download-image']">Export</button>
+    </div>
+
+</div>

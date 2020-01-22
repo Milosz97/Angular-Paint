@@ -1,0 +1,93 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="import-tool-modal">Choose File To Import</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="importForm" class="form">
+            <div class="form-group">
+
+                <label for="inputFile" class="btn btn-outline-dark">Add File</label>
+                <div class="input-group">
+                    <input type="file" id="inputFile" class="form-control hide-input-file" (change)="inputFile($event)"
+                        accept="image/*" required="required">
+                </div>
+                <div *ngIf='fileName != null'>
+                    <div class="container mt-2">
+                        <h6 class="modal-title">File Data</h6>
+                        <table class="table">
+                            <tr>
+                                <th scope="row">Image Name</th>
+                                <td>{{ fileName }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Image Width</th>
+                                <td>{{ inputImage.width }} px</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Image Height</th>
+                                <td>{{ inputImage.height }} px</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <h5 class="modal-title">Choose Size</h5>
+
+
+                    <label for="imageWidth">Width</label>
+                    <div class="input-group">
+                        <input id="imageWidth" type="number" class="form-control" placeholder="Image Width"
+                            name="imageWidth" formControlName="width" required="required">
+                    </div>
+                    <div class="form__text-error">
+                        <div
+                            *ngIf="importForm.get('width').errors?.required && (importForm.get('width').touched || importForm.get('width').dirty)">
+                            Width is required.
+                        </div>
+                        <div
+                            *ngIf="importForm.get('width').errors?.min && (importForm.get('width').touched || importForm.get('width').dirty)">
+                            Width must be more than 1.
+                        </div>
+                        <div
+                            *ngIf="importForm.get('width').errors?.mmax && (importForm.get('width').touched || importForm.get('width').dirty)">
+                            Width must be less than 4000.
+                        </div>
+                    </div>
+
+                    <label for="imageHeight">Height</label>
+                    <div class="input-group">
+                        <input id="canvasHeight" type="number" class="form-control" placeholder="Image Height"
+                            name="canvasHeight" formControlName="height" required="required">
+                    </div>
+                    <div class="form__text-error">
+                        <div
+                            *ngIf="importForm.get('height').errors?.required && (importForm.get('height').touched || importForm.get('height').dirty)">
+                            Height is required.
+                        </div>
+                        <div
+                            *ngIf="importForm.get('height').errors?.min && (importForm.get('height').touched || importForm.get('height').dirty)">
+                            Height must be more than 1.
+                        </div>
+                        <div
+                            *ngIf="importForm.get('height').errors?.max && (importForm.get('height').touched || importForm.get('height').dirty)">
+                            Height must be less than 4000.
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close()"
+                            [disabled]="importForm.invalid">Change</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+</ng-template>
+
+<button id="Import" class="tool btn btn-outline-dark toolbar_tool_button" (click)="open(content)">Import File</button>

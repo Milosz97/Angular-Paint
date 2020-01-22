@@ -1,0 +1,31 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="text-tool-modal">Text Tool</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="textToDrawForm" class="form">
+      <div class="form-group">
+        <label for="textToolInput">Text To Draw</label>
+        <div class="input-group">
+          <input id="textToolInput" type="text" class="form-control" placeholder="My Text" name="textToolInput"
+            formControlName="text">
+        </div>
+        <div class="form__text-error">
+          <div
+            *ngIf="textToDrawForm.get('text').errors?.required && (textToDrawForm.get('text').touched || textToDrawForm.get('text').dirty)">
+            Text filed is required.
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close()"
+      [disabled]="textToDrawForm.invalid">Save</button>
+  </div>
+</ng-template>
+
+<button id="Text" class="tool btn btn-outline-dark toolbar_tool_button" (click)="open(content)">Text</button>

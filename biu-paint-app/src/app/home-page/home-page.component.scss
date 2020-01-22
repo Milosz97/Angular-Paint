@@ -1,0 +1,33 @@
+.welcome-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5%;
+    
+    .welcome-page__image-container{
+        
+        
+        .welcome-page__image-container__image{
+            display: block;
+            width: 30%;
+            height: auto;
+            margin: auto;
+        }
+    }
+    .welcome-page__buttons-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 20%;
+        .welcome-page__buttons-container__button{
+            width: 100%;
+            margin: 0.1em;
+           
+        }
+    }
+}
+
+
+

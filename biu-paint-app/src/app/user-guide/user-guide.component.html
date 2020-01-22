@@ -1,0 +1,220 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="container guide">
+
+    <h1 class="guide__header">User Guide</h1>
+    <p class="guide__description">This guide shortly explains functions of this programme and how to use them.</p>
+
+
+    <ngb-accordion [closeOthers]="true">
+
+        <ngb-panel id="penDescription">
+            <ng-template ngbPanelTitle>
+                <span>Pen Tool</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows free drawing on canvas with chosen size and color. Simply click on canvas and move your
+                mouse, drawing stops once you lift your mouse button.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="lineDescription">
+            <ng-template ngbPanelTitle>
+                <span>Line Tool</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows drawing lines on canvas with chosen size and color. Click on canvas, move your mouse
+                and lift mouse button.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="eraserDescription">
+            <ng-template ngbPanelTitle>
+                <span>Eraser Tool</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows to erase mistakes. Tool uses currently active tool size, so be careful. Click on canvas
+                and move your mouse, erasing stops once you lift your mouse button.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="fillDescription">
+            <ng-template ngbPanelTitle>
+                <span>Fill Tool</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows filling area with active color. Click on canvas and all pixels within closed area will
+                be colored.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="colorPickerDescription">
+            <ng-template ngbPanelTitle>
+                <span>Color Picker Tool</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows to change tool color. You can select new color by clicking on canvas.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="squareDescription">
+            <ng-template ngbPanelTitle>
+                <span>Square Tool</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows drawing squares on canvas with chosen size and color. Click on canvas drag you mouse
+                and lift button.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="circleDescription">
+            <ng-template ngbPanelTitle>
+                <span>Circle Tool</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows drawing circles on canvas with chosen size and color. To be more precise it allows
+                drawing <b>ellipses</b>. The place of mouse click is middle. Click on canvas and drag you mouse outwards
+                of center and lift button when you are finnished.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="triangleDescription">
+            <ng-template ngbPanelTitle>
+                <span>Triangle Tool</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows drawing triangles on canvas with chosen size and color. Click on canvas drag you mouse
+                and lift button.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="clearAllDescription">
+            <ng-template ngbPanelTitle>
+                <span>Clear All</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows erasing everything from canvas returning to starting point. To use, select tool and
+                click anywhere on canvas.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="selectionDescription">
+            <ng-template ngbPanelTitle>
+                <span>Selection Tool</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows selecting area and performing some actions. To select area click on canvas, drag and
+                lift your mouse button.
+
+                <ngb-accordion [closeOthers]="true">
+
+                    <ngb-panel id="moveDescription">
+                        <ng-template ngbPanelTitle>
+                            <span>Move Selection</span>
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            Use your arrow keys <b> &#8592; &#8593; &#8594; &#8595; </b>to move selected area around
+                            canvas.
+                        </ng-template>
+                    </ngb-panel>
+
+                    <ngb-panel id="copyDescription">
+                        <ng-template ngbPanelTitle>
+                            <span>Copy Selection</span>
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            By pressing <b>Ctrl + C</b> you can save selected area into programme's memory. You can have
+                            only one copy at a time.
+                        </ng-template>
+                    </ngb-panel>
+
+                    <ngb-panel id="pasteDescription">
+                        <ng-template ngbPanelTitle>
+                            <span>Paste Selection</span>
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            Once you created a copy you can paste it into canvas by pressing <b>Ctrl + V</b>.
+                        </ng-template>
+                    </ngb-panel>
+
+
+                    <ngb-panel id="enterDescription">
+                        <ng-template ngbPanelTitle>
+                            <span>Confirm Changes</span>
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            Once your selected area is in desired position press <b>Enter</b> to apply changes.
+                        </ng-template>
+                    </ngb-panel>
+
+                    <ngb-panel id="cancelDescription">
+                        <ng-template ngbPanelTitle>
+                            <span>Cancel Changes</span>
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            If you don't like changes you can revoke (if not confirmed before) by pressing <b>Escape /
+                                ESC</b> button
+                        </ng-template>
+                    </ngb-panel>
+
+                </ngb-accordion>
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="textDescription">
+            <ng-template ngbPanelTitle>
+                <span>Text Tool</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows to insert Text onto your canvas. This tool uses currently active tool size as well as
+                color. When you've entered your text, just click on canvas. Text will be drawn starting from click
+                position and going upwards and right.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="colorDescription">
+            <ng-template ngbPanelTitle>
+                <span>Tool Color</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                Changes currently active color.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="toolSizeDescription">
+            <ng-template ngbPanelTitle>
+                <span>Tool Size</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                Changes currently active tool size. Can't be less than 1.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="canvasSizeDescription">
+            <ng-template ngbPanelTitle>
+                <span>Canvas Size</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                Changes canvas size to a new one. Everything on canvas will be scaled to new size.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="importDescription">
+            <ng-template ngbPanelTitle>
+                <span>Import</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                This tool allows adding your own picture.
+            </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="exportDescription">
+            <ng-template ngbPanelTitle>
+                <span>Export</span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                Allows to save your work on your disk.
+            </ng-template>
+        </ngb-panel>
+
+    </ngb-accordion>
+</div>

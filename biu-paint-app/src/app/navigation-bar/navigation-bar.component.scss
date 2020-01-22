@@ -1,0 +1,5 @@
+@import '../../styles.scss';
+
+.navigation-bar{
+    @include navigation;
+}

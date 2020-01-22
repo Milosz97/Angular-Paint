@@ -1,0 +1,6 @@
+@import '../../styles.scss';
+
+.form{
+    @include formErrorText
+}
+

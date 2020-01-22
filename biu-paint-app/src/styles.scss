@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './scss-variables.scss';
+
+
+@mixin navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 0.1em;
+   
+    background-color: $navbarBgColor;
+
+    .navigation-bar__button-box{
+        min-width: 15%;
+        height: 100%;
+        margin: 0 0.2em;
+        padding: 0.1em;
+    }
+
+    .navigation-bar__button-box__button{
+        text-transform: capitalize;
+        width: 100%;
+        height: 100%;
+        background-color: $navbarButtonBgColor;
+        color: black;
+        border: 1px solid black;
+
+        &:hover{
+            background-color: $navbarButtonBgColorHover;
+            color: white;
+        }
+    }
+
+}
+
+@mixin formErrorText{
+    .form__text-error{
+        color: red;
+    }
+}
+
+
+.toolbar_tool_button{
+    padding: 0.2em;
+    width: 100%;
+    height: 100%;
+}
+
+.selected{
+    background-color: $selectedButtonBackgroundColor;
+    color: white;
+}
+
