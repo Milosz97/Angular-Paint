@@ -84,7 +84,10 @@ export class HelperMethodsService {
     }
     if (id) {
       let selected = document.getElementById(id);
-      selected.classList.add('selected');
+      selected.classList.add('selected');  
+      setTimeout(function(){
+        selected.focus();
+      }, 0);
     }
   }
 
